@@ -3,14 +3,14 @@ package com.pp.autojs.autojs.key;
 import android.util.Log;
 import android.view.KeyEvent;
 
-import com.stardust.app.GlobalAppContext;
-import com.stardust.autojs.core.inputevent.InputEventObserver;
-import com.stardust.autojs.core.inputevent.ShellKeyObserver;
-import com.stardust.event.EventDispatcher;
+import com.pp.app.GlobalAppContext;
+import com.pp.autojs.core.inputevent.InputEventObserver;
+import com.pp.autojs.core.inputevent.ShellKeyObserver;
+import com.pp.event.EventDispatcher;
 import com.pp.autojs.Pref;
 import com.pp.autojs.autojs.AutoJs;
-import com.stardust.view.accessibility.AccessibilityService;
-import com.stardust.view.accessibility.OnKeyListener;
+import com.pp.view.accessibility.AccessibilityService;
+import com.pp.view.accessibility.OnKeyListener;
 
 import javax.microedition.khronos.opengles.GL;
 

@@ -19,7 +19,6 @@
             android:name="android.max_aspect"
             android:value="2.1"/>
 
-        <service android:name=".external.foreground.ForegroundService"/>
         <service android:name=".external.ScriptExecutionIntentService"/>
 
         <activity
@@ -85,7 +84,7 @@
         </receiver>
 
         <service
-            android:name="com.stardust.notification.NotificationListenerService"
+            android:name="com.pp.notification.NotificationListenerService"
             android:label="@string/app_name"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>
@@ -95,7 +94,7 @@
 
         <receiver android:name=".timing.TaskReceiver">
             <intent-filter>
-                <action android:name="com.stardust.autojs.action.task"/>
+                <action android:name="com.pp.autojs.action.task"/>
             </intent-filter>
         </receiver>
     </application>

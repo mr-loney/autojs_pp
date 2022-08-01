@@ -17,7 +17,7 @@ import com.pp.autojs.receiver.DynamicBroadcastReceivers
 import com.pp.autojs.timing.TimedTaskManager
 import com.pp.autojs.timing.TimedTaskScheduler
 import com.pp.autojs.util.Drawables
-import com.stardust.app.GlobalAppContext
+import com.pp.app.GlobalAppContext
 import java.lang.ref.WeakReference
 import java.util.*
 
@@ -74,7 +74,7 @@ class App : MultiDexApplication() {
 
     private fun setupDrawableImageLoader() {
         Drawables.setDefaultImageLoader(object : ImageLoader,
-            com.stardust.autojs.core.ui.inflater.ImageLoader {
+            com.pp.autojs.core.ui.inflater.ImageLoader {
             override fun loadInto(imageView: ImageView, uri: Uri) {
                 Glide.with(imageView)
                         .load(uri)
@@ -123,7 +123,7 @@ class App : MultiDexApplication() {
             override fun load(
                 view: View?,
                 uri: Uri?,
-                callback: com.stardust.autojs.core.ui.inflater.ImageLoader.DrawableCallback?
+                callback: com.pp.autojs.core.ui.inflater.ImageLoader.DrawableCallback?
             ) {
                 if (view != null) {
                     Glide.with(view)
@@ -139,7 +139,7 @@ class App : MultiDexApplication() {
             override fun load(
                 view: View?,
                 uri: Uri?,
-                callback: com.stardust.autojs.core.ui.inflater.ImageLoader.BitmapCallback?
+                callback: com.pp.autojs.core.ui.inflater.ImageLoader.BitmapCallback?
             ) {
                 if (view != null) {
                     Glide.with(view)

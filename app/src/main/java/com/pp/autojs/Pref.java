@@ -5,8 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 
-import com.stardust.app.GlobalAppContext;
-import com.stardust.autojs.runtime.accessibility.AccessibilityConfig;
+import com.pp.app.GlobalAppContext;
+import com.pp.autojs.runtime.accessibility.AccessibilityConfig;
 
 import com.pp.autojs.autojs.key.GlobalKeyObserver;
 

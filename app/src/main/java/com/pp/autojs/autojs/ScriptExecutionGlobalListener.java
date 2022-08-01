@@ -1,9 +1,9 @@
 package com.pp.autojs.autojs;
 
-import com.stardust.app.GlobalAppContext;
-import com.stardust.autojs.engine.JavaScriptEngine;
-import com.stardust.autojs.execution.ScriptExecution;
-import com.stardust.autojs.execution.ScriptExecutionListener;
+import com.pp.app.GlobalAppContext;
+import com.pp.autojs.engine.JavaScriptEngine;
+import com.pp.autojs.execution.ScriptExecution;
+import com.pp.autojs.execution.ScriptExecutionListener;
 import com.pp.autojs.App;
 import com.pp.autojs.R;
 

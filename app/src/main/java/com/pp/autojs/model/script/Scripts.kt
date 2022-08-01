@@ -3,21 +3,23 @@ package com.pp.autojs.model.script
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import android.widget.Toast
 import androidx.annotation.Nullable
-import com.stardust.app.GlobalAppContext
-import com.stardust.autojs.execution.ExecutionConfig
-import com.stardust.autojs.execution.ScriptExecution
-import com.stardust.autojs.execution.SimpleScriptExecutionListener
-import com.stardust.autojs.runtime.exception.ScriptInterruptedException
-import com.stardust.autojs.script.ScriptSource
-import com.stardust.util.IntentUtil
+import com.pp.app.GlobalAppContext
+import com.pp.autojs.execution.ExecutionConfig
+import com.pp.autojs.execution.ScriptExecution
+import com.pp.autojs.execution.SimpleScriptExecutionListener
+import com.pp.autojs.runtime.exception.ScriptInterruptedException
+import com.pp.autojs.script.ScriptSource
+import com.pp.util.IntentUtil
 import com.pp.autojs.Pref
 import com.pp.autojs.autojs.AutoJs
 import com.pp.autojs.external.fileprovider.AppFileProvider
 import org.mozilla.javascript.RhinoException
 import java.io.File
 import java.io.FileFilter
+import kotlin.math.log
 
 /**
  * Created by Stardust on 2017/5/3.
@@ -39,6 +41,7 @@ object Scripts {
     private val BROADCAST_SENDER_SCRIPT_EXECUTION_LISTENER = object : SimpleScriptExecutionListener() {
 
         override fun onSuccess(execution: ScriptExecution, result: Any?) {
+            Log.e("pengjun" , "ACTION_SCRIPT_EXECUTION_FINISHED 1")
             GlobalAppContext.get().sendBroadcast(Intent(ACTION_SCRIPT_EXECUTION_FINISHED))
         }
 
@@ -51,10 +54,12 @@ object Scripts {
                 col = rhinoException.columnNumber()
             }
             if (ScriptInterruptedException.causedByInterrupted(e)) {
+                Log.e("pengjun" , "ACTION_SCRIPT_EXECUTION_FINISHED 2")
                 GlobalAppContext.get().sendBroadcast(Intent(ACTION_SCRIPT_EXECUTION_FINISHED)
                         .putExtra(EXTRA_EXCEPTION_LINE_NUMBER, line)
                         .putExtra(EXTRA_EXCEPTION_COLUMN_NUMBER, col))
             } else {
+                Log.e("pengjun" , "ACTION_SCRIPT_EXECUTION_FINISHED 3")
                 GlobalAppContext.get().sendBroadcast(Intent(ACTION_SCRIPT_EXECUTION_FINISHED)
                         .putExtra(EXTRA_EXCEPTION_MESSAGE, e.message)
                         .putExtra(EXTRA_EXCEPTION_LINE_NUMBER, line)
@@ -82,6 +87,7 @@ object Scripts {
 
     fun run(file: ScriptFile): ScriptExecution? {
         return try {
+            Log.e("pengjun" , "ACTION_SCRIPT_EXECUTION_START 1")
             GlobalAppContext.get().sendBroadcast(Intent(ACTION_SCRIPT_EXECUTION_START))
             AutoJs.getInstance().scriptEngineService.execute(file.toSource(),
                     ExecutionConfig(workingDirectory = file.parent))
@@ -96,6 +102,7 @@ object Scripts {
 
     fun run(source: ScriptSource): ScriptExecution? {
         return try {
+            Log.e("pengjun" , "ACTION_SCRIPT_EXECUTION_START 2")
             GlobalAppContext.get().sendBroadcast(Intent(ACTION_SCRIPT_EXECUTION_START))
             AutoJs.getInstance().scriptEngineService.execute(source, ExecutionConfig(workingDirectory = Pref.getScriptDirPath()))
         } catch (e: Exception) {

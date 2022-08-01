@@ -4,11 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.stardust.autojs.execution.ExecutionConfig;
-import com.stardust.autojs.script.JavaScriptFileSource;
-import com.stardust.autojs.script.ScriptSource;
-import com.stardust.autojs.script.SequenceScriptSource;
-import com.stardust.autojs.script.StringScriptSource;
+import com.pp.autojs.execution.ExecutionConfig;
+import com.pp.autojs.script.JavaScriptFileSource;
+import com.pp.autojs.script.ScriptSource;
+import com.pp.autojs.script.SequenceScriptSource;
+import com.pp.autojs.script.StringScriptSource;
 
 import com.pp.autojs.Pref;
 import com.pp.autojs.autojs.AutoJs;

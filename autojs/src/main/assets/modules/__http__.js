@@ -1,6 +1,6 @@
 module.exports = function (runtime, scope) {
     importPackage(Packages["okhttp3"]);
-    importClass(com.stardust.autojs.core.http.MutableOkHttp);
+    importClass(com.pp.autojs.core.http.MutableOkHttp);
     var http = {};
 
     http.__okhttp__ = new MutableOkHttp();
@@ -106,7 +106,7 @@ module.exports = function (runtime, scope) {
                 mimeType = value[1]
                 path = value[2];
             }
-            var file = new com.stardust.pio.PFile(path);
+            var file = new com.pp.pio.PFile(path);
             fileName = fileName || file.getName();
             mimeType = mimeType || parseMimeType(file.getExtension());
             builder.addFormDataPart(key, fileName, RequestBody.create(MediaType.parse(mimeType), file));

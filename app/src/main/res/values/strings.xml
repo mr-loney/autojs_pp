@@ -1,11 +1,5 @@
 <resources>
-    <string name="app_name">autojs</string>
-    <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="app_name">RPA</string>
 
     <string name="key_guard_mode" translatable="false">key_guard_mode</string>
     <string name="key_use_volume_control_record">key_use_volume_control_record</string>
@@ -17,4 +11,11 @@
     <string name="key_script_dir_path">key_script_dir_path</string>
     <string name="default_value_script_dir_path">/Scripts/</string>
     <string name="key_enable_accessibility_service_by_root">key_enable_accessibility_service_by_root</string>
+
+    <string name="explain_accessibility_permission">软件需要打开\"无障碍服务\"才能运行，请在随后的设置中选择\"RPA\"并开启服务。\n您也可以稍后在侧拉菜单中设置。</string>
+    <string name="text_need_to_enable_accessibility_service">需要启用无障碍服务</string>
+    <string name="text_go_to_setting">去设置</string>
+    <string name="text_cancel">取消</string>
+    <string name="text_do_not_remind_again">不再提示</string>
+
 </resources>

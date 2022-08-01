@@ -1,5 +1,5 @@
 module.exports = function (runtime, global) {
-    const Continuation = com.stardust.autojs.rhino.continuation.Continuation;
+    const Continuation = com.pp.autojs.rhino.continuation.Continuation;
 
     function continuation() {
 

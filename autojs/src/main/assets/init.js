@@ -75,10 +75,10 @@ runtime.init();
     })(global);
 
     importClass(android.view.KeyEvent);
-    importClass(com.stardust.autojs.core.util.Shell);
+    importClass(com.pp.autojs.core.util.Shell);
     importClass(android.graphics.Paint);
-    Canvas = com.stardust.autojs.core.graphics.ScriptCanvas;
-    Image = com.stardust.autojs.core.image.ImageWrapper;
+    Canvas = com.pp.autojs.core.graphics.ScriptCanvas;
+    Image = com.pp.autojs.core.image.ImageWrapper;
 
     //重定向require以便支持相对路径和npm模块
     Module = require("jvm-npm.js");

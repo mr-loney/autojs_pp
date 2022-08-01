@@ -14,7 +14,7 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.stardust.autojs.core.ui.inflater.ImageLoader;
+import com.pp.autojs.core.ui.inflater.ImageLoader;
 
 import java.net.URL;
 import java.util.regex.Matcher;

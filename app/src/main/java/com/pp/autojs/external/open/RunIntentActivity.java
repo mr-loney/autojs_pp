@@ -8,8 +8,8 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import com.stardust.autojs.script.StringScriptSource;
-import com.stardust.pio.PFiles;
+import com.pp.autojs.script.StringScriptSource;
+import com.pp.pio.PFiles;
 
 import com.pp.autojs.R;
 import com.pp.autojs.external.ScriptIntents;

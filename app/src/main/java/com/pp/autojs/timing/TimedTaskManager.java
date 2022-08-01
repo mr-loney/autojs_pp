@@ -5,7 +5,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.stardust.app.GlobalAppContext;
+import com.pp.app.GlobalAppContext;
 
 import com.pp.autojs.App;
 import com.pp.autojs.storage.database.IntentTaskDatabase;

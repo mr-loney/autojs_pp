@@ -171,7 +171,7 @@ module.exports = function(runtime, global){
         if(root == null){
             return null;
         }
-        return com.stardust.automator.UiObject.Companion.createRoot(root);
+        return com.pp.automator.UiObject.Companion.createRoot(root);
     });
 
     auto.__defineGetter__("rootInActiveWindow", function() {
@@ -179,17 +179,17 @@ module.exports = function(runtime, global){
         if(root == null){
             return null;
         }
-        return com.stardust.automator.UiObject.Companion.createRoot(root);
+        return com.pp.automator.UiObject.Companion.createRoot(root);
     });
 
     auto.__defineGetter__("windowRoots", function() {
         return util.java.toJsArray(runtime.accessibilityBridge.windowRoots(), false)
-            .map(root => com.stardust.automator.UiObject.Companion.createRoot(root));
+            .map(root => com.pp.automator.UiObject.Companion.createRoot(root));
     });
 
 
     auto.setWindowFilter = function(filter){
-        runtime.accessibilityBridge.setWindowFilter(new com.stardust.autojs.core.accessibility.AccessibilityBridge.WindowFilter(filter));
+        runtime.accessibilityBridge.setWindowFilter(new com.pp.autojs.core.accessibility.AccessibilityBridge.WindowFilter(filter));
     }
 
     global.auto = auto;

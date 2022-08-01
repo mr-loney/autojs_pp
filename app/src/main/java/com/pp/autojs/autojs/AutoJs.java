@@ -9,29 +9,29 @@ import android.os.Looper;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.pp.autojs.tool.AccessibilityServiceTool;
-import com.stardust.app.GlobalAppContext;
-import com.stardust.autojs.core.console.GlobalConsole;
-import com.stardust.autojs.runtime.ScriptRuntime;
-import com.stardust.autojs.runtime.accessibility.AccessibilityConfig;
-import com.stardust.autojs.runtime.api.AppUtils;
-import com.stardust.autojs.runtime.exception.ScriptException;
-import com.stardust.autojs.runtime.exception.ScriptInterruptedException;
+import com.pp.app.GlobalAppContext;
+import com.pp.autojs.core.console.GlobalConsole;
+import com.pp.autojs.runtime.ScriptRuntime;
+import com.pp.autojs.runtime.accessibility.AccessibilityConfig;
+import com.pp.autojs.runtime.api.AppUtils;
+import com.pp.autojs.runtime.exception.ScriptException;
+import com.pp.autojs.runtime.exception.ScriptInterruptedException;
 
 import com.pp.autojs.BuildConfig;
 import com.pp.autojs.Pref;
 import com.pp.autojs.R;
 import com.pp.autojs.external.fileprovider.AppFileProvider;
 
-import com.stardust.view.accessibility.AccessibilityService;
-import com.stardust.view.accessibility.LayoutInspector;
-import com.stardust.view.accessibility.NodeInfo;
+import com.pp.view.accessibility.AccessibilityService;
+import com.pp.view.accessibility.LayoutInspector;
+import com.pp.view.accessibility.NodeInfo;
 
 
 /**
  * Created by Stardust on 2017/4/2.
  */
 
-public class AutoJs extends com.stardust.autojs.AutoJs {
+public class AutoJs extends com.pp.autojs.AutoJs {
 
     private static AutoJs instance;
 

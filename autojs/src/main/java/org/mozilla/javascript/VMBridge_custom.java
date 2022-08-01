@@ -3,7 +3,7 @@ package org.mozilla.javascript;
 import android.os.Looper;
 import android.util.Log;
 
-import com.stardust.autojs.engine.RhinoJavaScriptEngine;
+import com.pp.autojs.engine.RhinoJavaScriptEngine;
 
 import org.mozilla.javascript.jdk15.VMBridge_jdk15;
 
@@ -55,7 +55,7 @@ public class VMBridge_custom extends VMBridge_jdk15 {
                 } catch (Throwable e) {
                     e.printStackTrace();
                     // notify the script thread to exit
-                    com.stardust.autojs.runtime.ScriptRuntime runtime = engine.getRuntime();
+                    com.pp.autojs.runtime.ScriptRuntime runtime = engine.getRuntime();
                     Log.d(LOG_TAG, "runtime = " + runtime);
                     runtime.exit(e);
                     // even if we caught the exception, we must return a value to for the method call.

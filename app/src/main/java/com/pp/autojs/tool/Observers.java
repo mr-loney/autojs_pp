@@ -1,6 +1,6 @@
 package com.pp.autojs.tool;
 
-import com.stardust.app.GlobalAppContext;
+import com.pp.app.GlobalAppContext;
 
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;

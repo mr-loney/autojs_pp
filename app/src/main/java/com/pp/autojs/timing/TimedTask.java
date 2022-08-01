@@ -4,7 +4,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 
-import com.stardust.autojs.execution.ExecutionConfig;
+import com.pp.autojs.execution.ExecutionConfig;
 
 import com.pp.autojs.external.ScriptIntents;
 import com.pp.autojs.storage.database.BaseModel;

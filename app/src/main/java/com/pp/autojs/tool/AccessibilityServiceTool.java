@@ -4,10 +4,10 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.stardust.app.GlobalAppContext;
-import com.stardust.autojs.core.accessibility.AccessibilityService;
-import com.stardust.autojs.core.util.ProcessShell;
-import com.stardust.view.accessibility.AccessibilityServiceUtils;
+import com.pp.app.GlobalAppContext;
+import com.pp.autojs.core.accessibility.AccessibilityService;
+import com.pp.autojs.core.util.ProcessShell;
+import com.pp.view.accessibility.AccessibilityServiceUtils;
 
 import com.pp.autojs.Pref;
 import com.pp.autojs.R;
@@ -40,7 +40,7 @@ public class AccessibilityServiceTool {
         try {
             AccessibilityServiceUtils.INSTANCE.goToAccessibilitySetting(context);
         } catch (ActivityNotFoundException e) {
-            GlobalAppContext.toast("<![CDATA[请打开设置->无障碍服务->Auto.js并开启]]>" + context.getString(R.string.app_name));
+            GlobalAppContext.toast("<![CDATA[请打开设置->无障碍服务->RPA并开启]]>" + context.getString(R.string.app_name));
         }
     }
 
