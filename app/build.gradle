@@ -1,0 +1,104 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdkVersion versions.compile
+    buildToolsVersion versions.buildTool
+
+    defaultConfig {
+        applicationId "com.pp.autojs"
+        minSdkVersion versions.mini
+        targetSdkVersion versions.target
+        versionCode versions.appVersionCode
+        versionName versions.appVersionName
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+        encoding = 'utf-8'
+    }
+    lintOptions {
+        abortOnError false
+        disable 'MissingTranslation'
+        disable 'ExtraTranslation'
+    }
+
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
+    }
+
+    flavorDimensions "channel"
+    splits {
+
+        // Configures multiple APKs based on ABI.
+        abi {
+
+            // Enables building multiple APKs per ABI.
+            enable true
+
+            // By default all ABIs are included, so use reset() and include to specify that we only
+            // want APKs for x86 and x86_64.
+
+            // Resets the list of ABIs that Gradle should create APKs for to none.
+            reset()
+
+            // Specifies a list of ABIs that Gradle should create APKs for.
+            include "x86", "armeabi-v7a"
+
+            // Specifies that we do not want to also generate a universal APK that includes all ABIs.
+            universalApk false
+        }
+    }
+    productFlavors {
+        common {
+            buildConfigField "String", "CHANNEL", '"common"'
+        }
+        coolapk {
+            buildConfigField "String", "CHANNEL", '"coolapk"'
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    google()
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0-alpha01'
+    implementation 'androidx.multidex:multidex:2.0.0'
+
+    implementation 'joda-time:joda-time:2.9.9'
+    implementation 'com.twofortyfouram:android-plugin-client-sdk-for-locale:4.0.3'
+    implementation "io.reactivex.rxjava2:rxjava:2.1.2"
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'com.evernote:android-job:1.2.6'
+    implementation('com.github.bumptech.glide:glide:4.8.0', {
+        exclude group: 'com.android.support'
+    })
+    kapt 'com.github.bumptech.glide:compiler:4.8.0'
+    implementation project(':autojs')
+    implementation project(':automator')
+}
