@@ -1,5 +1,6 @@
 package com.pp.autojs.autojs;
 
+import static com.pp.autojs.Pref.ACTION_SCRIPT_EXECUTION_EXCEPTION;
 import static com.pp.autojs.Pref.ACTION_SCRIPT_EXECUTION_FINISHED;
 
 import android.util.Log;
@@ -44,6 +45,10 @@ public class ScriptExecutionGlobalListener implements ScriptExecutionListener {
 
     @Override
     public void onException(ScriptExecution execution, Throwable e) {
+        Intent it = new Intent(ACTION_SCRIPT_EXECUTION_EXCEPTION);
+        it.putExtra("exception", e.toString());
+        GlobalAppContext.get().sendBroadcast(it);
+
         onFinish(execution);
     }
 

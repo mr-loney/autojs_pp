@@ -28,6 +28,7 @@ public class Pref {
     public static final String ACTION_SCRIPT_EXECUTION_START = "com.pp.autojs.ACTION_SCRIPT_EXECUTION_START";
     public static final String ACTION_SCRIPT_LOG = "com.pp.autojs.ACTION_SCRIPT_LOG";
     public static final String ACTION_SCRIPT_EXECUTION_FINISHED = "com.pp.autojs.ACTION_SCRIPT_EXECUTION_FINISHED";
+    public static final String ACTION_SCRIPT_EXECUTION_EXCEPTION = "com.pp.autojs.ACTION_SCRIPT_EXECUTION_EXCEPTION";
 
     private static SharedPreferences.OnSharedPreferenceChangeListener onSharedPreferenceChangeListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
         @Override
