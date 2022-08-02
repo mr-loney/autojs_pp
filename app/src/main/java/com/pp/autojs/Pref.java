@@ -25,6 +25,10 @@ public class Pref {
     private static final String KEY_EDITOR_THEME = "editor.theme";
     private static final String KEY_EDITOR_TEXT_SIZE = "editor.textSize";
 
+    public static final String ACTION_SCRIPT_EXECUTION_START = "com.pp.autojs.ACTION_SCRIPT_EXECUTION_START";
+    public static final String ACTION_SCRIPT_LOG = "com.pp.autojs.ACTION_SCRIPT_LOG";
+    public static final String ACTION_SCRIPT_EXECUTION_FINISHED = "com.pp.autojs.ACTION_SCRIPT_EXECUTION_FINISHED";
+
     private static SharedPreferences.OnSharedPreferenceChangeListener onSharedPreferenceChangeListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
         @Override
         public void onSharedPreferenceChanged(SharedPreferences p, String key) {
@@ -59,6 +63,10 @@ public class Pref {
 
     public static int oldVersion() {
         return 0;
+    }
+
+    public static boolean isRunningVolumeControlEnabled() {
+        return def().getBoolean(getString(R.string.key_use_volume_control_running), false);
     }
 
     public static boolean shouldEnableAccessibilityServiceByRoot() {

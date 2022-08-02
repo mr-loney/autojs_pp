@@ -1,11 +1,16 @@
 package com.pp.autojs.autojs;
 
+import static com.pp.autojs.Pref.ACTION_SCRIPT_EXECUTION_FINISHED;
+import static com.pp.autojs.Pref.ACTION_SCRIPT_LOG;
+
 import android.app.Application;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Looper;
+import android.util.Log;
+
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.pp.autojs.tool.AccessibilityServiceTool;
@@ -50,7 +55,7 @@ public class AutoJs extends com.pp.autojs.AutoJs {
     private AutoJs(final Application application) {
         super(application);
         getScriptEngineService().registerGlobalScriptExecutionListener(new ScriptExecutionGlobalListener());
-        IntentFilter intentFilter = new IntentFilter();
+//        IntentFilter intentFilter = new IntentFilter();
 //        intentFilter.addAction(LayoutBoundsFloatyWindow.class.getName());
 //        intentFilter.addAction(LayoutHierarchyFloatyWindow.class.getName());
 //        LocalBroadcastManager.getInstance(application).registerReceiver(mLayoutInspectBroadcastReceiver, intentFilter);
@@ -68,7 +73,9 @@ public class AutoJs extends com.pp.autojs.AutoJs {
             public String println(int level, CharSequence charSequence) {
                 String log = super.println(level, charSequence);
 //                DevPluginService.getInstance().log(log);
-                //log?
+                Intent it = new Intent(ACTION_SCRIPT_LOG);
+                it.putExtra("data", log);
+                GlobalAppContext.get().sendBroadcast(it);
                 return log;
             }
         };

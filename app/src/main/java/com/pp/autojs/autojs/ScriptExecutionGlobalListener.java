@@ -1,5 +1,10 @@
 package com.pp.autojs.autojs;
 
+import static com.pp.autojs.Pref.ACTION_SCRIPT_EXECUTION_FINISHED;
+
+import android.util.Log;
+
+import android.content.Intent;
 import com.pp.app.GlobalAppContext;
 import com.pp.autojs.engine.JavaScriptEngine;
 import com.pp.autojs.execution.ScriptExecution;
@@ -31,6 +36,10 @@ public class ScriptExecutionGlobalListener implements ScriptExecutionListener {
         double seconds = (System.currentTimeMillis() - millis) / 1000.0;
         AutoJs.getInstance().getScriptEngineService().getGlobalConsole()
                 .verbose("\\n------------\\n[%s]运行结束，用时%f秒", execution.getSource().toString(), seconds);
+
+        Intent it = new Intent(ACTION_SCRIPT_EXECUTION_FINISHED);
+        it.putExtra("duration", seconds);
+        GlobalAppContext.get().sendBroadcast(it);
     }
 
     @Override
