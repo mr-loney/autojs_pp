@@ -7,11 +7,11 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.pp.autojs.autojs.AutoJs
 import com.pp.autojs.model.script.ScriptFile
 import com.pp.autojs.model.script.Scripts
 import com.pp.autojs.tool.AccessibilityServiceTool
 import com.pp.autojs.tool.FileTool
-import java.io.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +21,44 @@ class MainActivity : AppCompatActivity() {
 
         showAccessibilitySettingPromptIfDisabled()
 
+        Log.i("MainActivity", "================");
+        intent?.extras?.also {
+            val action = it.get("Action") as String
+            Log.i("MainActivity", "================ action = " + action);
+
+            if (action == "run") {
+                runScript()
+            } else if (action == "stop") {
+                stopScript()
+            }
+        }
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+
+        Log.i("MainActivity", "================");
+
+        intent?.extras?.also {
+            val action = it.get("Action") as String
+            Log.i("MainActivity", "================ action = " + action);
+
+            if (action == "run") {
+                runScript()
+            } else if (action == "stop") {
+                stopScript()
+            }
+        }
+
+    }
+
+    private fun stopScript() {
+        Log.i("MainActivity", "stop all running script");
+        AutoJs.getInstance().scriptEngineService.stopAllAndToast()
+        finish();
+    }
+
+    private fun runScript() {
         val extras = intent.extras
         if (extras != null && AccessibilityServiceTool.isAccessibilityServiceEnabled(this)) {
             val script_path = extras.get("ScriptPath") as Uri?;
