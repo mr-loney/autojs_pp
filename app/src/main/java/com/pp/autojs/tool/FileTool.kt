@@ -56,6 +56,7 @@ class FileTool {
                 if (newFile.exists()) {
                     return newFile.absolutePath
                 }
+                Log.d("MainActivity", "================ copyScript fail, root_path.absolutePath = " + root_path.absolutePath);
                 return null
             } else {
                 return newFile.absolutePath

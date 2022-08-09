@@ -21,10 +21,10 @@ class MainActivity : AppCompatActivity() {
 
         showAccessibilitySettingPromptIfDisabled()
 
-        Log.i("MainActivity", "================");
+        Log.d("MainActivity", "================");
         intent?.extras?.also {
             val action = it.get("Action") as String
-            Log.i("MainActivity", "================ action = " + action);
+            Log.d("MainActivity", "================ action = " + action);
 
             if (action == "run") {
                 runScript()
@@ -37,11 +37,11 @@ class MainActivity : AppCompatActivity() {
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
 
-        Log.i("MainActivity", "================");
+        Log.d("MainActivity", "================");
 
         intent?.extras?.also {
             val action = it.get("Action") as String
-            Log.i("MainActivity", "================ action = " + action);
+            Log.d("MainActivity", "================ action = " + action);
 
             if (action == "run") {
                 runScript()
@@ -60,9 +60,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun runScript() {
         val extras = intent.extras
+        Log.d("MainActivity", "================ extras != null = " + (extras != null));
+        Log.d("MainActivity", "================ AccessibilityServiceTool.isAccessibilityServiceEnabled(this) = " + (AccessibilityServiceTool.isAccessibilityServiceEnabled(this)));
         if (extras != null && AccessibilityServiceTool.isAccessibilityServiceEnabled(this)) {
             val script_path = extras.get("ScriptPath") as Uri?;
-            val log_path = extras.get("LogPath") as Uri?;
+            val log_path = extras.get("LogPath") as Uri?
+            Log.d("MainActivity", "================ script_path = " + script_path);
             if (script_path != null) {
                 FileTool.copyScript(this, script_path).also { output ->
                     Log.i("MainActivity", "begin run script = " + output + " ; log path = " + log_path);

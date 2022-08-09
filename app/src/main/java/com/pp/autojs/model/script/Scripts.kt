@@ -84,6 +84,7 @@ object Scripts {
 
     fun run(file: ScriptFile): ScriptExecution? {
         return try {
+            Log.d("MainActivity", "================ engine run script begin");
             GlobalAppContext.get().sendBroadcast(Intent(ACTION_SCRIPT_EXECUTION_START))
             AutoJs.getInstance().scriptEngineService.execute(file.toSource(),
                     ExecutionConfig(workingDirectory = file.parent))
