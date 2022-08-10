@@ -17,6 +17,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         debug {
             shrinkResources false
@@ -68,10 +69,7 @@ android {
     }
     productFlavors {
         common {
-            buildConfigField "String", "CHANNEL", '"common"'
-        }
-        coolapk {
-            buildConfigField "String", "CHANNEL", '"coolapk"'
+            buildConfigField "String", "CHANNEL", '"default"'
         }
     }
 }
