@@ -10,8 +10,8 @@ import com.pp.app.GlobalAppContext;
 import com.pp.autojs.engine.JavaScriptEngine;
 import com.pp.autojs.execution.ScriptExecution;
 import com.pp.autojs.execution.ScriptExecutionListener;
-import com.pp.autojs.App;
-import com.pp.autojs.R;
+import com.pp.app.App;
+import com.pp.app.R;
 
 /**
  * Created by Stardust on 2017/5/3.

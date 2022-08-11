@@ -7,7 +7,7 @@ import android.text.TextUtils;
 
 import com.pp.app.GlobalAppContext;
 
-import com.pp.autojs.App;
+import com.pp.app.App;
 import com.pp.app.storage.database.IntentTaskDatabase;
 import com.pp.app.storage.database.ModelChange;
 import com.pp.app.storage.database.TimedTaskDatabase;

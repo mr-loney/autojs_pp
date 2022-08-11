@@ -1,4 +1,4 @@
-package com.pp.autojs
+package com.pp.app
 
 import android.annotation.SuppressLint
 import android.content.Context

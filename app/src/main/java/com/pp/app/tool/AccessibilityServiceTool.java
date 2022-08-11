@@ -10,7 +10,7 @@ import com.pp.autojs.core.util.ProcessShell;
 import com.pp.view.accessibility.AccessibilityServiceUtils;
 
 import com.pp.app.Pref;
-import com.pp.autojs.R;
+import com.pp.app.R;
 
 import java.util.Locale;
 

@@ -13,6 +13,7 @@ import com.pp.app.model.script.ScriptFile
 import com.pp.app.model.script.Scripts
 import com.pp.app.tool.AccessibilityServiceTool
 import com.pp.app.tool.FileTool
+import com.pp.app.R
 
 
 class MainActivity : AppCompatActivity() {
