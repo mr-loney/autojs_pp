@@ -23,11 +23,8 @@ class MainActivity : AppCompatActivity() {
 
         showAccessibilitySettingPromptIfDisabled()
 
-        Log.d("MainActivity", "================");
         intent?.extras?.also {
             val action = it.get("Action") as String
-            Log.d("MainActivity", "================ action = " + action);
-
             if (action == "run") {
                 runScript(it)
             } else if (action == "stop") {
@@ -39,12 +36,8 @@ class MainActivity : AppCompatActivity() {
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
 
-        Log.d("MainActivity", "================");
-
         intent?.extras?.also {
             val action = it.get("Action") as String
-            Log.d("MainActivity", "================ action = " + action);
-
             if (action == "run") {
                 runScript(it)
             } else if (action == "stop") {
@@ -61,11 +54,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun runScript(extras: Bundle) {
-        Log.d("MainActivity", "================ AccessibilityServiceTool.isAccessibilityServiceEnabled(this) = " + (AccessibilityServiceTool.isAccessibilityServiceEnabled(this)));
         if (AccessibilityServiceTool.isAccessibilityServiceEnabled(this)) {
             val script_path = extras.get("ScriptPath") as Uri?;
             val log_path = extras.get("LogPath") as Uri?
-            Log.d("MainActivity", "================ script_path = " + script_path);
             if (script_path != null) {
                 FileTool.copyScript(this, script_path).also { output ->
                     Log.i("MainActivity", "begin run script = " + output + " ; log path = " + log_path);
